@@ -1,8 +1,13 @@
 c9-express-demo
 ===============
 
-just a demo
+cloud9 demo
 
-npm install ejs
-npm install express
-npm install path
+Quick start
+-----------
+
+```
+$ npm install express
+$ npm install path
+$ npm install ejs
+```
