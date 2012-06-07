@@ -29,5 +29,6 @@ io.sockets.on('connection', function (socket) {
   socket.on('new', function () {
     ip = socket.handshake.address.address;
     console.log('new user ip: ', ip);
+    socket.emit('message', {message: 'your ip is '+ip}); 
   });
 });
