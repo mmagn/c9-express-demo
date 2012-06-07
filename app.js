@@ -26,11 +26,8 @@ app.listen(process.env.PORT);
 var counter = 0;
 
 io.sockets.on('connection', function (socket) {
-    counter++;
-    socket.emit('upd', { counter: counter });
-    
-    socket.on('disconnect', function () {
-        counter--;
-        io.sockets.emit('upd', { counter: counter });
-    });
+  socket.on('new', function () {
+    ip = socket.handshake.address.address;
+    console.log('new user ip: ', ip);
+  });
 });

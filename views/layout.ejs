@@ -5,11 +5,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
+    var title = '';
     var socket = io.connect(location.host);
+    socket.emit('new');
+    
+    
     $(function(){
-        socket.on('upd', function (data) {
-            $('h1').html(data.counter);
-        });        
+        $('h1').html(title);
     });
     </script>
 </head>
